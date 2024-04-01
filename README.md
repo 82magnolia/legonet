@@ -10,8 +10,8 @@ This holds the implementation for [LEGO-Net: Learning Regular Rearrangements of 
 ## Environment
 Install the conda environment <br>
 ```
-conda env create -n CanonicalArrangements --file environment.yml
-conda activate CanonicalArrangements
+conda env create -n legonet --file environment.yml
+conda activate legonet
 ```
 Modify ``filepath.py`` accordingly.
 
