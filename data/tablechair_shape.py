@@ -191,4 +191,4 @@ def visualize_tablechair_shape(scene, fp="tablechair_shape.jpg", title="table_ho
 if __name__ == '__main__':
     input, labels = gen_data_tablechair_shape_bimodal(2)  # [batch_size, 7, 136]  
     for scene_i in range(input.shape[0]):
-        visualize_tablechair_shape(input[scene_i],  fp=f"tablechair_shape_{scene_i}.jpg", title=f"tablechair_shape: {scene_i}")
+        visualize_tablechair_shape(input[scene_i],  fp=f"./logs/tablechair_shape_{scene_i}.jpg", title=f"tablechair_shape: {scene_i}")

@@ -235,7 +235,7 @@ To produce realistic renderings, one must download the original 3D-FRONT dataset
 To visualize example data samples:
 
 ```
-python tablechair_circle.py
+python data/tablechair_circle.py
 ``` 
 Clean          |  Messy 
 :-------------------------:|:-------------------------: |
@@ -243,7 +243,7 @@ Clean          |  Messy
 
 
 ```
-python tablechair_horizontal.py
+python data/tablechair_horizontal.py
 ``` 
 Clean          |  Messy 
 :-------------------------:|:-------------------------: |
@@ -251,7 +251,7 @@ Clean          |  Messy
 
 
 ```
-python tablechair_shape.py
+python data/tablechair_shape.py
 ``` 
 
 Clean          |  Messy 

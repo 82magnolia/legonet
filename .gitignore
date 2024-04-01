@@ -1,2 +1,5 @@
 results/
 pretrained/
+__pycache__/
+logs/
+dataset/

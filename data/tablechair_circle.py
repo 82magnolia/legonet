@@ -313,5 +313,5 @@ def visualize_tablechair_circle(scene, fp="tablechair_horizontal.jpg", title="ta
 if __name__ == '__main__':
     input, labels = gen_data_tablechair_circle_bimodal(2) # [batch_size, 14, 8]  
     for scene_i in range(input.shape[0]):
-        visualize_tablechair_circle(input[scene_i], fp=f"tablechair_circle_{scene_i}.jpg", title=f"tablechair_circle: {scene_i}")
+        visualize_tablechair_circle(input[scene_i], fp=f"./logs/tablechair_circle_{scene_i}.jpg", title=f"tablechair_circle: {scene_i}")
 

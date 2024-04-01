@@ -379,4 +379,4 @@ def visualize_tablechair_horizontal(scene, fp="tablechair_horizontal.jpg", title
 if __name__ == '__main__':
     input, labels = gen_data_tablechair_horizontal_bimodal(2, horizontal_align=True, scene_rot=False) # [batch_size, 14, 8]  
     for scene_i in range(input.shape[0]):
-        visualize_tablechair_horizontal(input[scene_i], fp=f"tablechair_horizontal_{scene_i}.jpg", title=f"tablechair_horizontal: {scene_i}")
+        visualize_tablechair_horizontal(input[scene_i], fp=f"./logs/tablechair_horizontal_{scene_i}.jpg", title=f"tablechair_horizontal: {scene_i}")

@@ -55,7 +55,7 @@ def load_checkpoint(model, model_fp):
     global start_epoch
 
     checkpoint = torch.load(model_fp, map_location=args['device'])
-    model.load_state_dict(checkpoint['model_state_dict'])
+    model.load_state_dict(checkpoint['model_state_dict'], strict=False)
     if torch.cuda.device_count() > 1: model = torch.nn.DataParallel(model)
     model = model.to(args['device'])
 
@@ -509,13 +509,13 @@ def logsavedir_from_args(args):
         branch = '1branch' if args['use_two_branch']==0 else '2branch'
 
         if args['data_type']!="3dfront":
-            return os.path.join(f"{dateprefix}_{args['data_type']}", f"{args['timestamp']}") # _{args['loss_func']}_{predtype}
+            return os.path.join("logs", f"{dateprefix}_{args['data_type']}", f"{args['timestamp']}") # _{args['loss_func']}_{predtype}
         if args['data_type']=="3dfront":
             cons = f"_{'T' if args['train_weigh_by_class'] else 'F'}{'T' if args['train_within_floorplan'] else 'F'}{'T' if args['train_no_penetration'] else 'F'}_"
-            return os.path.join(f"{dateprefix}_{args['room_type']}", f"{args['timestamp']}_{cons}") # _livonly{args['livingroom_only']}_aug{args['use_augment']}_{args['loss_func']}_{args['floorplan_encoder_type']}
+            return os.path.join("logs", f"{dateprefix}_{args['room_type']}", f"{args['timestamp']}_{cons}") # _livonly{args['livingroom_only']}_aug{args['use_augment']}_{args['loss_func']}_{args['floorplan_encoder_type']}
     
     elif args['train']==0 and args['compareeval']==0:
-        numiterk = int(int(os.path.split(args['model_path'])[-1][:-7]) / 1000)
+        numiterk = 1000  # Arbitrarily set for eval mode
         if args['data_type']!="3dfront":
             return os.path.join(os.path.split(args['model_path'])[0], f"E_{args['timestamp']}_{numiterk}k") 
         else:
